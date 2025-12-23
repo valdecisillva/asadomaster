@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Biblia Definitiva del Asado Perfecto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #c52c2c;
+            --primary-dark: #8b0000;
+            --secondary: #f5a623;
+            --dark: #2c2c2c;
+            --light: #f8f8f8;
+            --success: #27ae60;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .logo span {
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #8b0000 0%, #c52c2c 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .cta-button:hover {
+            background-color: #ffc107;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+        }
+        
+        .cta-button i {
+            margin-right: 10px;
+        }
+        
+        /* Pain Section */
+        .pain-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: var(--dark);
+        }
+        
+        .section-title span {
+            color: var(--primary);
+        }
+        
+        .pain-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .pain-card {
+            background-color: #f8f8f8;
+            padding: 25px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary);
+        }
+        
+        .pain-card i {
+            color: var(--primary);
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        /* Solution Section */
+        .solution-section {
+            padding: 60px 0;
+            background-color: #f0f0f0;
+        }
+        
+        .solution-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+        
+        /* Benefits */
+        .benefits-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background-color: #f8f8f8;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+        
+        .benefit-card i {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 60px 0;
+            background-color: #f0f0f0;
+        }
+        
+        .content-modules {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .module {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: var(--shadow);
+        }
+        
+        .module h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+        }
+        
+        /* Bonuses */
+        .bonuses-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .bonus-card {
+            background-color: #f8f8f8;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px dashed var(--secondary);
+        }
+        
+        .bonus-tag {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        /* Pricing */
+        .pricing-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #8b0000 0%, #c52c2c 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .price-box {
+            background-color: white;
+            color: var(--dark);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .new-price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .installments {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-methods {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-icon {
+            font-size: 30px;
+            color: #555;
+        }
+        
+        /* Guarantee */
+        .guarantee-section {
+            padding: 60px 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        
+        .guarantee-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            border: 5px solid var(--success);
+        }
+        
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-top: 20px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">ASADO<span>MASTER</span></div>
+            <p>La comunidad de parrilleros más grande de Latinoamérica</p>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">Oferta de Lanzamiento</div>
+                    <h1>¡Deja de Adivinar en la Parrilla! Convierte Cada Corte en una Obra Maestra Jugosa</h1>
+                    <p class="subtitle">Descubre el sistema paso a paso que transformará tu forma de preparar carne y te convertirá en el héroe de cada reunión familiar</p>
+                    
+                    <ul style="margin-bottom: 30px; list-style: none;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Domina el fuego perfecto (carbón, leña o gas)</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Conoce los cortes ideales para cada ocasión</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Aprende marinados y salsas secretas</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Identifica el punto perfecto de cocción</li>
+                    </ul>
+                    
+                    <a href="#offer" class="cta-button">
+                        <i class="fas fa-bolt"></i> QUIERO ACCEDER AL MÉTODO
+                    </a>
+                    
+                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.9;">
+                        <i class="fas fa-shield-alt"></i> Garantía de 30 días - Acceso inmediato
+                    </p>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Carne asada perfecta">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Section -->
+    <section class="pain-section" id="problema">
+        <div class="container">
+            <h2 class="section-title">¿Te Identificas con <span>Alguna de Estas Situaciones?</span></h2>
+            
+            <div class="pain-points">
+                <div class="pain-card">
+                    <i class="fas fa-sad-tear"></i>
+                    <h3>Carne Seca y Dura</h3>
+                    <p>Invertiste en un corte premium pero terminó como suela de zapato, desperdiciando dinero y decepcionando a tus invitados.</p>
+                </div>
+                
+                <div class="pain-card">
+                    <i class="fas fa-calendar-times"></i>
+                    <h3>Vergüenza en Reuniones</h3>
+                    <p>Invitaste a amigos o familiares y el asado fue un desastre, dejándote con la sensación de haber arruinado el momento especial.</p>
+                </div>
+                
+                <div class="pain-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Información Contradictoria</h3>
+                    <p>Ves videos con técnicas diferentes y no sabes a quién creer. Un día te dicen una cosa y al siguiente todo cambia.</p>
+                </div>
+                
+                <div class="pain-card">
+                    <i class="fas fa-undo"></i>
+                    <h3>Siempre lo Mismo</h3>
+                    <p>Preparas las mismas recetas por miedo a experimentar y fallar, aburriéndote tú y a los que comparten tu mesa.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 20px; font-weight: 600;">Si respondiste <strong>SÍ</strong>, no es tu culpa. Simplemente <span style="color: var(--primary);">nadie te enseñó el método correcto</span>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-box">
+                <h2 class="section-title" style="text-align: left;">Imagina Esto por un Momento...</h2>
+                
+                <div style="display: flex; align-items: center; flex-wrap: wrap; margin: 30px 0; gap: 20px;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Familia feliz en asado" style="width: 100%; border-radius: 10px;">
+                    </div>
+                    <div style="flex: 2; min-width: 300px;">
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 15px; font-size: 18px;"><i class="fas fa-check-circle" style="color: var(--success); margin-right: 10px;"></i> <strong>Confianza total</strong> al pararte frente a la parrilla, sabiendo exactamente lo que haces</li>
+                            <li style="margin-bottom: 15px; font-size: 18px;"><i class="fas fa-check-circle" style="color: var(--success); margin-right: 10px;"></i> Los <strong>elogios de tus seres queridos</strong> cuando prueben una carne tan tierna que no podrán creer que la preparaste tú</li>
+                            <li style="margin-bottom: 15px; font-size: 18px;"><i class="fas fa-check-circle" style="color: var(--success); margin-right: 10px;"></i> El <strong>olor irresistible</strong> que atraerá a todos al jardín, ansiosos por probar tu creación</li>
+                            <li style="margin-bottom: 15px; font-size: 18px;"><i class="fas fa-check-circle" style="color: var(--success); margin-right: 10px;"></i> <strong>Ahorrar dinero</strong> al elegir los cortes correctos para cada ocasión y evitar errores costosos</li>
+                            <li style="font-size: 18px;"><i class="fas fa-check-circle" style="color: var(--success); margin-right: 10px;"></i> Convertirte en <strong>la persona a la que todos piden consejos</strong> sobre carne y parrillas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px; padding: 20px; background-color: #fff8e1; border-radius: 10px; border-left: 5px solid var(--secondary);">
+                    <p style="font-size: 22px; font-weight: 700; color: var(--primary);">Esto NO es un sueño. Es el resultado natural de aplicar un <span style="text-decoration: underline;">método probado</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Lo que <span>Lograrás</span> con Este Método</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Reconocimiento Social</h3>
+                    <p>Serás conocido como "el maestro del asado" en tu círculo, el anfitrión que todos quieren visitar.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Salud y Bienestar</h3>
+                    <p>Prepararás carnes más jugosas y sabrosas, reduciendo el consumo de carbonizados dañinos.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-piggy-bank"></i>
+                    <h3>Ahorro Económico</h3>
+                    <p>Aprovecharás mejor cada corte, evitando desperdicios y compras innecesarias.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Conexión Familiar</h3>
+                    <p>Crearás momentos inolvidables alrededor de la parrilla, fortaleciendo tus relaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">¿Qué <span>Incluye</span> La Biblia Definitiva del Asado?</h2>
+            
+            <div class="content-modules">
+                <div class="module">
+                    <h3>MÓDULO 1: LOS FUNDAMENTOS DEL FUEGO</h3>
+                    <ul>
+                        <li>La verdad sobre carbón, leña y gas</li>
+                        <li>Método infalible para controlar la temperatura</li>
+                        <li>Cómo limpiar y mantener tu parrilla</li>
+                        <li>El error #1 que arruina cualquier asado</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>MÓDULO 2: LA CIENCIA DE LOS CORTES</h3>
+                    <ul>
+                        <li>Guía visual de cortes latinoamericanos</li>
+                        <li>Arrachera, Ribeye, Tampiqueña, Costillas</li>
+                        <li>Qué corte usar para cada ocasión</li>
+                        <li>Cómo leer el marmoleo y calidad</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>MÓDULO 3: MARINADOS Y SALSAZOS</h3>
+                    <ul>
+                        <li>Adobos clásicos y creativos</li>
+                        <li>Salsas que elevan cualquier carne</li>
+                        <li>Chimichurris, salsas verdes, moles</li>
+                        <li>Los "dry rubs" para costra perfecta</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>MÓDULO 4: TÉCNICAS DE COCCIÓN</h3>
+                    <ul>
+                        <li>Identificar el punto perfecto</li>
+                        <li>Técnica de sellado correcta</li>
+                        <li>El reposo obligatorio (¡no lo saltes!)</li>
+                        <li>Cómo asar vegetales perfectos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 20px; font-weight: 600;">Y eso es solo el comienzo...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses Section -->
+    <section class="bonuses-section">
+        <div class="container">
+            <h2 class="section-title">Bonos <span>Exclusivos</span> de Lanzamiento</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 18px;">(Solo disponibles durante esta oferta especial)</p>
+            
+            <div class="bonus-card">
+                <div class="bonus-tag">BONO #01 - Valorado en $29 USD</div>
+                <h3>Secretos para un Sazonado Perfecto de Cada Carne</h3>
+                <p>Descubre los secretos mejor guardados de los maestros parrilleros. Aprende exactamente cómo sazonar cada tipo de carne según su corte, grosor y textura. Incluye mezclas de especias exclusivas para res, cerdo, pollo y cordero que transformarán completamente el sabor de tus asados.</p>
+            </div>
+            
+            <div class="bonus-card">
+                <div class="bonus-tag">BONO #02 - Valorado en $25 USD</div>
+                <h3>El Punto Ideal para una Carne Perfecta</h3>
+                <p>Guía visual definitiva con fotografías profesionales que muestran exactamente cómo se ve cada punto de cocción. Aprende a identificar cuándo una carne está en su punto exacto de jugosidad y sabor, desde el término "vuelta y vuelta" hasta el "bien cocido" perfecto sin sequedad.</p>
+            </div>
+            
+            <div class="bonus-card">
+                <div class="bonus-tag">BONO #03 - Valorado en $19 USD</div>
+                <h3>Manual de la Parrilla</h3>
+                <p>Guía completa de mantenimiento, limpieza y optimización de tu parrilla. Aprende a controlar las zonas de calor, maximizar la eficiencia del combustible (carbón, leña o gas) y prolongar la vida útil de tu equipo. Incluye soluciones a problemas comunes como llamas altas, temperaturas inconsistentes y distribución desigual del calor.</p>
+            </div>
+            
+            <div style="background-color: var(--primary); color: white; padding: 20px; border-radius: 10px; margin-top: 30px; text-align: center;">
+                <h3 style="margin-bottom: 10px;">VALOR TOTAL DE LOS BONOS: <span style="text-decoration: line-through;">$73 USD</span></h3>
+                <p style="font-size: 20px;">¡Pero hoy los recibes <strong>GRATIS</strong> con tu compra!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="offer">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Tu Inversión <span style="color: var(--secondary);">Hoy</span></h2>
+            
+            <div class="price-box">
+                <p style="margin-bottom: 20px; font-size: 20px;">Has visto todo lo que incluye:</p>
+                
+                <ul style="text-align: left; margin-bottom: 30px; list-style: none;">
+                    <li style="margin-bottom: 10px; padding: 10px; background-color: #f8f8f8; border-radius: 5px;"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i> La Biblia Definitiva del Asado (Valor: <strong>$67 USD</strong>)</li>
+                    <li style="margin-bottom: 10px; padding: 10px; background-color: #f8f8f8; border-radius: 5px;"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i> Bono #01: Secretos de Sazonado (Valor: <strong>$29 USD</strong>)</li>
+                    <li style="margin-bottom: 10px; padding: 10px; background-color: #f8f8f8; border-radius: 5px;"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i> Bono #02: El Punto Ideal (Valor: <strong>$25 USD</strong>)</li>
+                    <li style="margin-bottom: 10px; padding: 10px; background-color: #f8f8f8; border-radius: 5px;"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i> Bono #03: Manual de la Parrilla (Valor: <strong>$19 USD</strong>)</li>
+                </ul>
+                
+                <div style="background-color: #f8f8f8; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                    <p class="old-price">VALOR TOTAL: $140 USD</p>
+                    <p class="new-price">HOY: $37 USD</p>
+                    <p class="installments">o 12 cuotas de <strong>$3.08 USD</strong></p>
+                    <p style="color: var(--primary); font-weight: 700; font-size: 18px;">¡AHORRO DEL 74%!</p>
+                </div>
+                
+                <p style="margin-bottom: 20px; font-size: 18px;"><i class="fas fa-bolt" style="color: var(--secondary);"></i> <strong>Oferta especial por tiempo limitado</strong></p>
+                
+                <a href="#oferta-final" class="cta-button" style="font-size: 24px;">
+                    <i class="fas fa-lock"></i> ACCEDER A LA OFERTA
+                </a>
+                
+                <div class="payment-methods">
+                    <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                    <div class="payment-icon" style="font-size: 24px; font-weight: 700; color: var(--primary);">OXXO</div>
+                    <div class="payment-icon" style="font-size: 24px; font-weight: 700; color: var(--primary);">7-ELEVEN</div>
+                </div>
+                
+                <p style="margin-top: 20px; font-size: 14px; color: #666;">
+                    <i class="fas fa-lock"></i> Pago 100% seguro y encriptado
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <h2 class="section-title">Garantía <span>Incondicional</span></h2>
+            
+            <div class="guarantee-box">
+                <i class="fas fa-shield-alt" style="font-size: 60px; color: var(--success); margin-bottom: 20px;"></i>
+                <h3 style="font-size: 28px; margin-bottom: 20px; color: var(--success);">Garantía "Asado Perfecto o Dinero de Vuelta"</h3>
+                
+                <p style="font-size: 18px; margin-bottom: 20px;">
+                    Compra, descarga, lee y pon en práctica las técnicas. Si en <strong>30 días</strong> no ves una mejora radical en tus parrilladas, si tu familia y amigos no notan la diferencia, o simplemente si sientes que no es para ti...
+                </p>
+                
+                <div style="background-color: #e8f5e9; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <p style="font-size: 22px; font-weight: 700; color: var(--success);">
+                        Te devuelvo el 100% de tu dinero, sin preguntas incómodas.
+                    </p>
+                </div>
+                
+                <p style="font-size: 18px;">
+                    Lo peor que puede pasar es que aprendas a hacer el mejor asado de tu vida.<br>
+                    Lo mejor, es que lo hagas sin ningún riesgo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas <span>Frecuentes</span></h2>
+            
+            <div class="faq-item">
+                <p class="faq-question">¿Cómo recibo el material?</p>
+                <p>Inmediatamente después de confirmar tu pago, serás redirigido a una página de descarga. También recibirás un correo electrónico con todos los accesos. Es instantáneo.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">¿Qué métodos de pago aceptan?</p>
+                <p>Aceptamos todas las tarjetas de crédito/débito internacionales, PayPal y, especialmente para México, MercadoPago (donde puedes pagar en efectivo en OXXO, 7-Eleven o con saldo de MercadoPago).</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">¿Puedo pagar en pesos mexicanos (MXN)?</p>
+                <p>Sí. Nuestro sistema mostrará el precio aproximado en MXN al momento del pago. El cargo final será en tu moneda local según la tasa de cambio de tu banco o procesador.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">¿Es para principiantes absolutos?</p>
+                <p>¡Absolutamente! Empezamos desde cero. Es perfecto para quien nunca ha encendido una parrilla, pero también tiene técnicas avanzadas para quienes ya tienen experiencia.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">¿Necesito una parrilla profesional?</p>
+                <p>No. Las técnicas se aplican a parrillas de carbón, gas o leña, desde las más sencillas hasta las más avanzadas. Lo importante es el conocimiento, no el equipo.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">¿La garantía de 30 días es real?</p>
+                <p>Sí, 100% real. Si no estás satisfecho, simplemente envíame un correo dentro de los 30 días y te reembolsamos completa y amablemente. Hemos tenido menos del 2% de devoluciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, var(--dark) 0%, #444 100%); color: white; text-align: center;" id="oferta-final">
+        <div class="container">
+            <h2 style="font-size: 36px; margin-bottom: 20px;">Tu Decisión en Este Momento</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 40px 0;">
+                    <div style="flex: 1; min-width: 250px; padding: 20px; background-color: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <h3 style="color: var(--secondary); margin-bottom: 15px;">Si NO Actúas Hoy:</h3>
+                        <ul style="text-align: left; list-style: none;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-times" style="color: #ff6b6b; margin-right: 10px;"></i> Seguirás improvisando en cada parrillada</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-times" style="color: #ff6b6b; margin-right: 10px;"></i> Seguirás arriesgando cortes caros</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-times" style="color: #ff6b6b; margin-right: 10px;"></i> Perderás oportunidades de crear momentos memorables</li>
+                            <li><i class="fas fa-times" style="color: #ff6b6b; margin-right: 10px;"></i> La próxima reunión familiar será otra oportunidad perdida</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 250px; padding: 20px; background-color: rgba(197, 44, 44, 0.3); border-radius: 10px; border: 2px solid var(--secondary);">
+                        <h3 style="color: var(--secondary); margin-bottom: 15px;">Si SÍ Actúas Hoy:</h3>
+                        <ul style="text-align: left; list-style: none;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Tendrás acceso inmediato a todo el sistema</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Recibirás los 3 bonos exclusivos GRATIS</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Estarás protegido por 30 días de garantía</li>
+                            <li><i class="fas fa-check" style="color: var(--secondary); margin-right: 10px;"></i> Tu próxima parrillada será INOLVIDABLE</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p style="font-size: 24px; margin-bottom: 30px; font-weight: 600;">
+                    <span style="color: var(--secondary);">El precio está subiendo pronto.</span> Esta oferta de lanzamiento es por tiempo limitado.
+                </p>
+                
+                <a href="#oferta-final" class="cta-button" style="max-width: 500px; margin: 0 auto;">
+                    <i class="fas fa-fire"></i> ¡QUIERO SER MAESTRO DE LA PARRILLA!
+                </a>
+                
+                <p style="margin-top: 20px; font-size: 16px; opacity: 0.8;">
+                    <i class="fas fa-clock"></i> Oferta válida hasta <span id="countdown" style="font-weight: 700;"></span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="font-size: 24px;">ASADO<span>MASTER</span></div>
+            <p>© 2023 La Biblia Definitiva del Asado. Todos los derechos reservados.</p>
+            
+            <div class="footer-links">
+                <a href="#">Términos de Uso</a> | 
+                <a href="#">Política de Privacidad</a> | 
+                <a href="#">Contacto</a>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">
+                Este producto es digital. No enviamos productos físicos. Los resultados pueden variar según la dedicación de cada persona. La garantía de 30 días es válida para solicitudes enviadas por correo electrónico.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(23, 59, 59, 0);
+            
+            const diff = tomorrow - now;
+            
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add a simple checkout simulation
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#oferta-final') {
+                    e.preventDefault();
+                    
+                    // In a real implementation, this would redirect to checkout
+                    alert("¡Gracias por tu interés! En una implementación real, serías redirigido a una página de checkout segura con todos los métodos de pago disponibles (tarjeta, PayPal, MercadoPago con opción OXXO y 7-Eleven).\n\nPrecio: $37 USD\nO 12 pagos de $3.08 USD\n\n¡Tu próxima parrillada será legendaria!");
+                    
+                    // Scroll to pricing section
+                    document.getElementById('offer').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
